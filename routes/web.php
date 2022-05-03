@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\PitStopController;
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [PitStopController::class, 'index']);
-Route::get('importindb/', [App\Http\Controllers\PitStopController::class, 'importInDB']);
+Route::get('/', [App\Http\Controllers\PageController::class, 'index']);
+Route::get('importindb/', [Pagecontroller::class, 'importInDB']);
 Route::resource('racenames','RaceNameController');
 
 Route::get('/dashboard', function () {

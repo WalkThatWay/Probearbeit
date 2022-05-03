@@ -21,7 +21,7 @@ class PageController extends Controller
         return view('index');
     }
 
-    public function writeDriversToDb()
+    public function importInDB()
     {
         $drivers = $this->driversRestClient->getDrivers();
 

@@ -18,6 +18,10 @@
             <tr>
                 <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">#</th>
                 <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">DriverName</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">PermanentNumber</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nationality</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">DOB</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Information</th>
                 <th class="relative px-6 py-3"></th>
                 <th class="relative px-6 py-3"></th>
             </tr>
@@ -26,7 +30,11 @@
             @forelse($drivers as $driver)
                 <tr>
                     <td class="px-6 py-4 whitespace-nowrap">{{$driver->id}}</td>
-                    <td class="px-6 py-4 whitespace-nowrap">{{$driver->drivername}}</td>
+                    <td class="px-6 py-4 whitespace-nowrap">{{$driver->DriverName}}</td>
+                    <td class="px-6 py-4 whitespace-nowrap">{{$driver->PermanentNumber}}</td>
+                    <td class="px-6 py-4 whitespace-nowrap">{{$driver->Nationality}}</td>
+                    <td class="px-6 py-4 whitespace-nowrap">{{$driver->DOB}}</td>
+                    <td class="px-6 py-4 whitespace-nowrap">{{$driver->Information}}</td>
                     <td class="px-6 py-4 whitespace-nowrap">
                         <a href="{{route('driver.edit', [$driver->id])}}" class="text-blue-500">Edit</a>
                     </td>

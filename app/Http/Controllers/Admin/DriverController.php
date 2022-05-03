@@ -38,11 +38,21 @@ class DriverController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            "drivername" => "required"
+            "drivername" => "required",
+            "permanentnumber" => "required",
+            "nationality" => "required",
+            "dob" => "required",
+            "information" => "required",
+            "driverid" => "required"
         ]);
 
         $driver = new Driver();
         $driver->drivername = $request->drivername;
+        $driver->permanentnumber = $request->permanentnumber;
+        $driver->nationality = $request->nationality;
+        $driver->dob = $request->dob;
+        $driver->information = $request->information;
+        $driver->driverid = $request->driverid;
         $driver->save();
 
         return redirect(route('driver.index'))->with('message', 'Driver created with success');
@@ -81,10 +91,18 @@ class DriverController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            "drivername" => "required"
+            "drivername" => "required",
+            "permanentnumber" => "required",
+            "nationality" => "required",
+            "dob" => "required",
+            "information" => "required"
         ]);
         $driver = Driver::find($id);
         $driver->drivername = $request->drivername;
+        $driver->permanentnumber = $request->permanentnumber;
+        $driver->nationality = $request->nationality;
+        $driver->dob = $request->dob;
+        $driver->information = $request->information;
         $driver->save();
         return redirect(route('driver.index'))->with('message', 'Driver updated with success');
     }

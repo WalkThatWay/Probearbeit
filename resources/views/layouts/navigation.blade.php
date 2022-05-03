@@ -21,21 +21,27 @@
             <div></div>
             <div></div>
             <div class="flex justify-self-end items-center">
-                <a href="{{route('driver.create')}}" class="flex mx-2 text-green-900 underline text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
-                    Creat driver
-                </a>
                 <a href="{{route('driver.index')}}" class="flex text-green-900 underline text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
                     All drivers
                 </a>
             </div>
             <div class="flex justify-self-end items-center">
-                <a href="{{route('racenames.create')}}" class="flex mx-2 text-green-900 underline text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
-                    Creat RaceName
+                <a href="{{route('driver.create')}}" class="flex text-green-900 underline text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                    Create driver
                 </a>
+            </div>
+            <!--
+            <div class="flex justify-self-end items-center">
                 <a href="{{route('racenames.index')}}" class="flex text-green-900 underline text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
                     All RaceNames
                 </a>
             </div>
+            <div class="flex justify-self-end items-center">
+                <a href="{{route('racenames.create')}}" class="flex text-green-900 underline text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                    Create RaceName
+                </a>
+            </div>
+            -->
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">

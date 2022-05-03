@@ -21,8 +21,7 @@
         </style>
     </head>
     <body class="antialiased">
-    hallo aus blade
-    {{$users}}
     <a href="importindb/" class="text-sm text-gray-700 dark:text-gray-500 underline">Import der Formel 1 Daten in die DB</a>
+    <a href="login/" class="text-sm text-gray-700 dark:text-gray-500 underline">Login zum Bearbeiten</a>
     </body>
 </html>
