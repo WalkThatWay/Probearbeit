@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Models\Driver;
@@ -18,7 +19,7 @@ class PageController extends Controller
 
     public function index()
     {
-        return view('index');
+        return view('index',['text' => '']);
     }
 
     public function importInDB()
@@ -42,11 +43,14 @@ class PageController extends Controller
                 $driverDb->save();
             } catch (\Illuminate\Database\QueryException $e) {
                 if ($e->errorInfo[0]) {
-                    return 'Daten waren schon importiert!';
+                    return view(
+                        'index',
+                        ['text' => 'Daten waren schon importiert!']
+                    );
                 }
             }
         }
 
-        return 'Daten sind importiert!';
+        return view('index',['text' => 'Daten sind importiert!']);
     }
 }

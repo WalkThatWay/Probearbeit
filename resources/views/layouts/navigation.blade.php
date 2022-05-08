@@ -5,7 +5,7 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
+                    <a href="/">
                         <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
                     </a>
                 </div>
@@ -18,8 +18,7 @@
                 </div>
             </div>
 
-            <div></div>
-            <div></div>
+
             <div class="flex justify-self-end items-center">
                 <a href="{{route('driver.index')}}" class="flex text-green-900 underline text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
                     All drivers
@@ -30,19 +29,8 @@
                     Create driver
                 </a>
             </div>
-            <!--
-            <div class="flex justify-self-end items-center">
-                <a href="{{route('racenames.index')}}" class="flex text-green-900 underline text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
-                    All RaceNames
-                </a>
-            </div>
-            <div class="flex justify-self-end items-center">
-                <a href="{{route('racenames.create')}}" class="flex text-green-900 underline text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
-                    Create RaceName
-                </a>
-            </div>
-            -->
 
+            @auth
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <x-dropdown align="right" width="48">
@@ -72,7 +60,7 @@
                     </x-slot>
                 </x-dropdown>
             </div>
-
+            @endauth
             <!-- Hamburger -->
             <div class="-mr-2 flex items-center sm:hidden">
                 <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
@@ -92,7 +80,7 @@
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
         </div>
-
+        @auth
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
             <div class="px-4">
@@ -113,5 +101,6 @@
                 </form>
             </div>
         </div>
+        @endauth
     </div>
 </nav>

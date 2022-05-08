@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DriverController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,17 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [App\Http\Controllers\PageController::class, 'index']);
-Route::get('importindb/', [Pagecontroller::class, 'importInDB']);
-Route::resource('racenames','RaceNameController');
+Route::get('/', [PageController::class, 'index']);
+Route::get('importindb/', [PageController::class, 'importInDB']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::resource("/driver", App\Http\Controllers\Admin\DriverController::class)->middleware("auth");
-Route::resource("/racenames", App\Http\Controllers\Admin\RacenameController::class)->middleware("auth");
+Route::resource("/driver", DriverController::class)
+    ->middleware("auth");
 
 
-
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
